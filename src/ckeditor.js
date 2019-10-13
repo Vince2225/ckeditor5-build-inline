@@ -11,6 +11,7 @@ import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapte
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
@@ -20,6 +21,7 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
@@ -27,6 +29,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import Font from '@ckeditor/ckeditor5-font/src/font';
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -52,27 +55,34 @@ InlineEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	Font,
+	Underline,
+	ImageResize
 ];
 
 // Editor configuration.
 InlineEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'heading',
+			'fontFamily',
+			'fontSize',
+			'fontColor',
+			'fontBackgroundColor',
 			'|',
 			'bold',
 			'italic',
-			'link',
+			'underline',
+			'|',
 			'bulletedList',
 			'numberedList',
-			'imageUpload',
-			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
+			'|',
+			'link',
+			'imageUpload',
+			'|',
 			'undo',
-			'redo'
-		]
+			'redo', ]
 	},
 	image: {
 		toolbar: [
@@ -87,6 +97,18 @@ InlineEditor.defaultConfig = {
 			'tableColumn',
 			'tableRow',
 			'mergeTableCells'
+		]
+	},
+	fontSize: {
+		options: [
+			12,
+			14,
+			16,
+			20,
+			24,
+			32,
+			40,
+			48
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
