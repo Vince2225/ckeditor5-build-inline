@@ -31,6 +31,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -60,7 +61,8 @@ InlineEditor.builtinPlugins = [
 	Font,
 	Underline,
 	ImageResize,
-	SimpleUploadAdapter
+	SimpleUploadAdapter,
+	Alignment
 ];
 
 // Editor configuration.
@@ -75,6 +77,11 @@ InlineEditor.defaultConfig = {
 			'bold',
 			'italic',
 			'underline',
+			'|',
+			'alignment:left',
+			'alignment:right',
+			'alignment:center',
+			'alignment:justify',
 			'|',
 			'bulletedList',
 			'numberedList',
