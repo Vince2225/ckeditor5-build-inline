@@ -75,7 +75,7 @@ InlineEditor.defaultConfig = {
 			'fontSize',
 			'fontColor',
 			'fontBackgroundColor',
-			'lineHeight',
+			'LineHeight',
 			'|',
 			'bold',
 			'italic',
