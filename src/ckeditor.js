@@ -96,10 +96,19 @@ InlineEditor.defaultConfig = {
 	image: {
 		toolbar: [
 			'imageStyle:full',
-			'imageStyle:side',
+			'imageStyle:alignLeft',
+			'imageStyle:alignCenter',
+			'imageStyle:alignRight',
 			'|',
 			'imageTextAlternative'
+		],
+		styles: [
+			'full',
+			'alignLeft',
+			'alignCenter',
+			'alignRight',
 		]
+
 	},
 	table: {
 		contentToolbar: [
